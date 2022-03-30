@@ -1,0 +1,7 @@
+/dist
+/gulp
+/node_modules
+/gulpfile.js
+/Instruction.txt
+/package.json
+/package-lock.json
