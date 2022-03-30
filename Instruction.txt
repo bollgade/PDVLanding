@@ -1,7 +1,0 @@
-npm i
-to start installing gulp in this project
-
-npm run dev
-"dev": "gulp",
-you can find this options in package.json. "scripts":{.....}
-start gulp in special option
