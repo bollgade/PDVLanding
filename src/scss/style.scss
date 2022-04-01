@@ -192,14 +192,13 @@ body {
       padding: 20px 17px;
       display: flex;
       flex-direction: row;
-
-      flex-wrap: wrap;
    }
 
    // .services__column
    &__column {
       flex: 1 1 33.3333%;
-
+      display: flex;
+      flex-direction: column;
       margin: 20px 0 26px 64px;
       padding: 0px 110px 0px 0px;
       border-right: 1px solid #d7d7dd;
@@ -214,8 +213,14 @@ body {
    }
 }
 .item-service {
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
    // .item-service__body
    &__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
    }
 
    // .item-service__icon
@@ -235,11 +240,15 @@ body {
    // .item-service__textblock
 
    &__textblock {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
    }
 
    // .item-service__title
 
    &__title {
+      flex-grow: 1;
       margin: 0px 0px 10px 0px;
    }
 
