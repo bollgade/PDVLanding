@@ -57,7 +57,7 @@ $md4: 479.98;
 @import "base/nullstyle";
 
 body {
-   background-color: #e5e5e5;
+   background-color: #fff;
 }
 // Оболочка =====================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
@@ -301,7 +301,6 @@ body {
    }
 }
 .votes-form {
-
    // .votes-form__radio-block
    &__radio-block {
       cursor: pointer;
@@ -312,6 +311,13 @@ body {
       border-radius: 10px;
       box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.12);
       background-color: #fff;
+
+      transition: all 0.3s ease 0s;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      -ms-transition: all 0.3s ease 0s;
+      
       position: relative;
       ::before{
          content: '';
@@ -334,22 +340,39 @@ body {
          left: 47px;
          top: 55px;
          transform: scale(0);
+         -webkit-transform: scale(0);
+         -moz-transform: scale(0);
+         -o-transform: scale(0);
+         -ms-transform: scale(0);
+
+         transition: all 0.3s ease 0s;
+         -webkit-transition: all 0.3s ease 0s;
+         -moz-transition: all 0.3s ease 0s;
+         -o-transition: all 0.3s ease 0s;
+         -ms-transition: all 0.3s ease 0s;
+      }
+      &.active{
+         border: 1px solid #0B7572;
+         ::after{
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -o-transform: scale(1);
+            -ms-transform: scale(1);
+         }
       }
    }
-
    &__radio-item {
       & input{
          display: none;
       }
       margin: 0px 0px 0px 56px;
    }
-
    // .votes-form__radio-button
    &__radio-button {
       margin: 0px 0px 15px 0px;
       padding: 0px 0px 0px 0px;
    }
-
    // .votes-form__radio-label
    &__radio-label {
       font-family: "Exo 2";
@@ -362,7 +385,6 @@ body {
    // .votes-form__text
    &__text {
    }
-
    // .votes-form__corner
    &__corner {
       transform: rotate(-18deg);
@@ -376,7 +398,6 @@ body {
 }
 
 .counter {
-
    // .counter__title
    &__title {
       font-family: "Exo 2";
@@ -385,21 +406,19 @@ body {
       line-height: 1.5;
       color: #363738;
    }
-
    // .counter__body
    &__body {
    }
-
    // .counter__number
    &__number {
    }
-
    // .counter__text
    &__text {
    }
 }
 //=====================================================================================================================================================================================================================================================================================================================================================================================================
 
+//=====================================================================================================================================================================================================================================================================================================================================================================================================
 
 .green-rectangle {
    background-color: #0b7572;
