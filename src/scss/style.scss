@@ -307,16 +307,10 @@ body {
       overflow: hidden;
       position: relative;
       margin: 0px 0px 16px 0px;
-      padding: 40px 165px 43px 40px;
+      padding: 40px 164px 43px 39px;
       border-radius: 10px;
       box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.12);
       background-color: #fff;
-
-      transition: all 0.3s ease 0s;
-      -webkit-transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      -ms-transition: all 0.3s ease 0s;
 
       position: relative;
       ::before{
@@ -352,8 +346,12 @@ body {
          -ms-transition: all 0.3s ease 0s;
       }
       &.active{
-         padding: 40px 164px 43px 39px;
          border: 1px solid #0B7572;
+         transition: all 0.3s ease 0s;
+         -webkit-transition: all 0.3s ease 0s;
+         -moz-transition: all 0.3s ease 0s;
+         -o-transition: all 0.3s ease 0s;
+         -ms-transition: all 0.3s ease 0s;
          ::after{
             transform: scale(1);
             -webkit-transform: scale(1);
