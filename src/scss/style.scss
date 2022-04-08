@@ -146,14 +146,14 @@ body {
    }
    // .PDV__text
    &__text {
+      
    }
    // .PDV__title
    &__title {
       font-family: "Exo 2";
       font-size: rem(52);
       font-weight: 600;
-      line-height: rem(65);
-      letter-spacing: 0em;
+      line-height: 125%;
       margin: 81px 15px 28px 0px;
    }
    // .PDV__subtitle
@@ -173,6 +173,9 @@ body {
    &__image {
       width: 635px;
       height: 505px;
+      @media (max-width: $pc) {
+         width: 635px;
+      }
    }
 }
 
@@ -334,30 +337,14 @@ body {
          left: 47px;
          top: 55px;
          transform: scale(0);
-         -webkit-transform: scale(0);
-         -moz-transform: scale(0);
-         -o-transform: scale(0);
-         -ms-transform: scale(0);
 
          transition: all 0.3s ease 0s;
-         -webkit-transition: all 0.3s ease 0s;
-         -moz-transition: all 0.3s ease 0s;
-         -o-transition: all 0.3s ease 0s;
-         -ms-transition: all 0.3s ease 0s;
       }
       &.active{
          border: 1px solid #0B7572;
          transition: all 0.3s ease 0s;
-         -webkit-transition: all 0.3s ease 0s;
-         -moz-transition: all 0.3s ease 0s;
-         -o-transition: all 0.3s ease 0s;
-         -ms-transition: all 0.3s ease 0s;
          ::after{
             transform: scale(1);
-            -webkit-transform: scale(1);
-            -moz-transform: scale(1);
-            -o-transform: scale(1);
-            -ms-transform: scale(1);
          }
       }
    }
@@ -450,9 +437,13 @@ body {
    top: 0;
    z-index: 0;
    right: 0;
-   @media (max-width: $md3+px){
+   @media (max-width: $mobile) {
    width: prc(177, 768);
    height: 743px;
+   }
+   @media (max-width: em(375)) {
+      width: prc(375, 375);
+      height: 766px;
    }
 }
 
