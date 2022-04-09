@@ -52,6 +52,8 @@ $md1: $mw + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
+$md5: 374.98;
+
 
 // Обнуление и общие параметры =====================================================================================================================================================================================================================================================================================================================================================================================================
 @import "base/nullstyle";
@@ -136,13 +138,25 @@ body {
 }
 
 .vendor {
-   margin: 110px 0px 65px 0px;
-
+   margin: rem(110) 0px rem(65) 0px;
+   @media (max-width: $pc){
+      margin: rem(90) 0px rem(50) 0px;
+   }
+   @media (max-width: $mobile){
+      margin: rem(80) 0px rem(40) 0px;
+   }
+   @media (max-width: em($md5)){
+      margin: rem(75) 0px rem(56) 0px;
+   }
    // .PDV__content
    &__row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      @media (max-width: $mobile){
+         margin: rem(80) 0px rem(40) 0px;
+         flex-direction: column;
+      }
    }
    // .PDV__text
    &__text {
@@ -154,7 +168,7 @@ body {
       font-size: rem(52);
       font-weight: 600;
       line-height: 125%;
-      margin: 81px 15px 28px 0px;
+      margin: rem(81) rem(15) rem(28) 0px;
    }
    // .PDV__subtitle
    &__subtitle {
