@@ -110,6 +110,11 @@ body {
             padding: 0 rem(math.div($containerPadding, 2)+24);
          }
       }
+      @media (max-width: em($md5)){
+         @if ($containerPadding>0 and $maxWidthContainer>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         }
+      }
    }
 }
 // База =====================================================================================================================================================================================================================================================================================================================================================================================================
@@ -139,28 +144,26 @@ body {
    @media (max-width: $mobile){
       padding: rem(80) 0 0 0;
    }
+   @media (max-width: em($md5)){
+      padding: rem(75) 0 0 0;
+   }
 }
 
 .vendor {
    margin: 0 0 rem(65) 0;
-   @media (max-width: $pc){
-   }
-   // @media (max-width: $tablet){
-   //    margin: rem(60) 0px rem(50) 0px;
-   // }
    @media (max-width: $mobile){
       margin: 0 0 rem(40) 0;
    }
-   // @media (max-width: em($md5)){
-   //    margin: rem(65) 0px rem(56) 0px;
-   // }
+   @media (max-width: em($md5)){
+      margin: 0 0 rem(56) 0;
+      
+   }
    // .PDV__content
    &__row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       @media (max-width: $tablet){
-         margin: 0 0px rem(40) 0px;
          flex-direction: column;
       }
    }
@@ -176,6 +179,10 @@ body {
       // }
       @media (max-width: $mobile){
          margin: 0 prc(177, 768) rem(61) 0;
+      }
+      @media (max-width: em($md5)){
+         margin: 0 0 rem(46) 0;
+         color: #fff;
       }
    }
    // .PDV__title
@@ -195,6 +202,10 @@ body {
       @media (max-width: $mobile){
          font-size: rem(44);
       }
+      @media (max-width: em($md5)){
+         font-size: rem(28);
+         margin: rem(0) rem(0) rem(26) rem(0);
+      }
    }
    // .PDV__subtitle
    &__subtitle {
@@ -205,6 +216,21 @@ body {
       @media (max-width: $mobile){
          margin: 0px 0px rem(55) 0px;
       }
+      @media (max-width: em($md5)){
+         font-size: rem(15);
+         margin: 0px 0px rem(25) 0px;
+         & p{
+            display: inline;
+         }
+         & p:last-child{
+            display: none;
+         }
+      }
+   }
+   &__subtitle-text { 
+      @media (max-width: em($md5)){
+      color: #fff;
+      }
    }
    // .PDV__more
    &__more {
@@ -214,6 +240,10 @@ body {
       color: #363738;
       padding: 0px 0px em(4) 0px;
       border-bottom: 3px solid #ffce50;
+      @media (max-width: em($md5)){
+         font-size: rem(15);
+         color: #fff;
+      }
    }
    // .PDV__image
    &__image {
