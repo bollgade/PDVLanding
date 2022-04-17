@@ -141,7 +141,7 @@ body {
    z-index: 2;
    position: relative;
    padding: rem(110) 0 0 0;
-   @media (max-width: $mobile){
+   @media (max-width: $tablet){
       padding: rem(80) 0 0 0;
    }
    @media (max-width: em($md5)){
@@ -151,7 +151,7 @@ body {
 
 .vendor {
    margin: 0 0 rem(65) 0;
-   @media (max-width: $mobile){
+   @media (max-width: $tablet){
       margin: 0 0 rem(40) 0;
    }
    @media (max-width: em($md5)){
@@ -177,7 +177,7 @@ body {
       //    margin: 0 prc(599, 1440) 0 0;
       //    border: 1px solid #000;
       // }
-      @media (max-width: $mobile){
+      @media (max-width: $tablet){
          margin: 0 prc(177, 768) rem(61) 0;
       }
       @media (max-width: em($md5)){
@@ -198,8 +198,6 @@ body {
       // }
       @media (max-width: $tablet){
          margin: rem(0) rem(0) rem(27) rem(0);
-      }
-      @media (max-width: $mobile){
          font-size: rem(44);
       }
       @media (max-width: em($md5)){
@@ -213,7 +211,7 @@ body {
       // @media (max-width: $pc){
       //    margin: 0px 0px rem(20) 0px;
       // }
-      @media (max-width: $mobile){
+      @media (max-width: $tablet){
          margin: 0px 0px rem(55) 0px;
       }
       @media (max-width: em($md5)){
@@ -529,7 +527,7 @@ body {
    @media (max-width: $tablet){
       height: 743px;
    }
-   @media (max-width: $mobile) {
+   @media (max-width: $tablet) {
       width: prc(177, 768);
    }
    @media (max-width: em($md5)) {
