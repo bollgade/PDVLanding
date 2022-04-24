@@ -15,7 +15,7 @@
 
 // Шрифты по умолчанию =====================================================================================================================================================================================================================================================================================================================================================================================================
 $fontFamily: "PT Sans";
-$fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
+$fontSize: rem(16); 
 
 // Основные цвета
 $mainColor: #000; // Цвет шрифта по умолчанию
@@ -36,7 +36,7 @@ $containerPadding: 30;
 // Тип адаптива:
 // 1 = отзывчивость ( у контейнера нет брейкпоинтов),
 // 2 = по брейк-поинтам (контейнер меняет свою ширину по БП)
-$responsiveType: 1;
+$responsiveType: 0;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -74,7 +74,7 @@ body {
 Стили будут применяться ко всем классам с *__container
 Сниппет: cnt
 */
-@if (responsiveType==1) {
+@if ($responsiveType==1) {
    // Отзывчивая
    [class*="__container"] {
       @if ($maxWidthContainer>0) {
@@ -137,20 +137,20 @@ body {
 
 // Основная верстка =====================================================================================================================================================================================================================================================================================================================================================================================================
 
+@mixin PDVLanding($property, $startSize1, $endSize1, $endSize2, $endSize3) {
+   @include adaptiv-value($property, $endSize2, $endSize3, $md5);
+   @include adaptiv-value($property, $endSize1, $endSize2, $md2, $md5);
+   @include adaptiv-value($property, $startSize1, $endSize1, $maxWidth, $md2);
+}
+
 .content {
    z-index: 2;
    position: relative;
-   padding: rem(110) 0 0 0;
-   @media (max-width: $tablet){
-      padding: rem(80) 0 0 0;
-   }
-   @media (max-width: em($md5)){
-      padding: rem(75) 0 0 0;
-   }
+   @include PDVLanding(padding-top, 110, 80, 75, 70);
 }
 
 .vendor {
-   margin: 0 0 rem(65) 0;
+   @include adaptiv-value(margin-bottom, 65, 40, $maxWidth, $md2);
    @media (max-width: $tablet){
       margin: 0 0 rem(40) 0;
    }
@@ -169,54 +169,41 @@ body {
    }
    // .PDV__text
    &__text {
-      margin: 0 rem(15) 0 0px;
-      // @media (max-width: $pc){
-      //    margin: 0 rem(10) 0 0px;
-      // }
-      // @media (max-width: $tablet){
-      //    margin: 0 prc(599, 1440) 0 0;
-      //    border: 1px solid #000;
-      // }
+      margin-right: rem(15);
+      @include adaptiv-value(margin-bottom, 46, 35, $md5);
+      @include adaptiv-value(margin-bottom, 61, 46, $md2, $md5);
+      margin-bottom: rem(15);
       @media (max-width: $tablet){
-         margin: 0 prc(177, 768) rem(61) 0;
+         margin-right: prc(177, 768);
       }
       @media (max-width: em($md5)){
-         margin: 0 0 rem(46) 0;
          color: #fff;
+         margin-right: rem(0);
       }
    }
    // .PDV__title
    &__title {
       font-family: "Exo 2";
-      font-size: rem(52);
+      // font-size: rem(52);
       font-weight: 600;
       line-height: 125%;
-      margin: rem(81) rem(10) rem(28) 0px;
-      // @media (max-width: $pc){
-      //    margin: rem(50) rem(0) rem(20) 0px;
-      //    font-size: rem(45);
-      // }
+      margin-bottom: rem(28);
+      @include adaptiv-value(margin-top, 81, 24, $maxWidth, $md2);
+      @include PDVLanding(font-size, 52, 44, 28, 24);
       @media (max-width: $tablet){
-         margin: rem(0) rem(0) rem(27) rem(0);
-         font-size: rem(44);
+         margin-bottom: rem(27);
+         margin-top: 0;
       }
       @media (max-width: em($md5)){
-         font-size: rem(28);
-         margin: rem(0) rem(0) rem(26) rem(0);
+         margin-bottom: rem(26);
       }
    }
    // .PDV__subtitle
    &__subtitle {
       margin: 0px 0px rem(34) 0px;
-      // @media (max-width: $pc){
-      //    margin: 0px 0px rem(20) 0px;
-      // }
-      @media (max-width: $tablet){
-         margin: 0px 0px rem(55) 0px;
-      }
+      @include PDVLanding(margin-bottom, 34, 55, 25, 20);
       @media (max-width: em($md5)){
          font-size: rem(15);
-         margin: 0px 0px rem(25) 0px;
          & p{
             display: inline;
          }
@@ -261,8 +248,7 @@ body {
          height: rem(253);
          border-radius: 18px 18px 18px 18px;
       }
-      @media (max-width: em($md5)){
-      }
+      @include adaptiv-value(height, 314, 253, $md2, $md5);
    }
 }
 
